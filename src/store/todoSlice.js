@@ -10,6 +10,8 @@ const todoSlice = createSlice({
     addTodo(state, action){
       state.todos.push({          			      
 					id: new Date().toISOString(),
+          day: new Date().toLocaleDateString(),
+          time: new Date().toLocaleTimeString(),
 					text: action.payload.text,
 					completed: false,
 				

@@ -33,16 +33,14 @@ const TodoSection = styled.div`
 // 	}
 // });
 
-
-	const submitEnter = document.getElementById("input__todo");
-	if (submitEnter) {
+const submitEnter = document.getElementById("input__todo");
+if (submitEnter) {
 	submitEnter.addEventListener("keyup", ({ key }) => {
-			if (key === "Enter") {
-				document.getElementById("addTodoButton").click();
-			}
-		});
-	};
-
+		if (key === "Enter") {
+			document.getElementById("addTodoButton").click();
+		}
+	});
+}
 
 function Main() {
 	const [text, setText] = useState("");
@@ -51,7 +49,7 @@ function Main() {
 	const handleAction = () => {
 		if (text.trim().length) {
 			dispatch(addTodo({ text }));
-			setText("");
+			setText("");			
 		}
 	};
 
@@ -59,11 +57,11 @@ function Main() {
 		<MainWrapper className="Main">
 			<MyTasks />
 			<TodoSection>
-				<NewTodoForm
+				<NewTodoForm					
 					text={text}
 					updateText={setText}
 					handleAction={handleAction}
-					// submitEnter={submitEnter}
+					submitEnter={submitEnter}
 				/>
 
 				<TodoList />
