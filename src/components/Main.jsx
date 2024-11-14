@@ -3,41 +3,31 @@ import { useDispatch } from "react-redux";
 import { useState } from "react";
 
 import styled from "styled-components";
-
 import TodoList from "../Todo/TodoList";
 import NewTodoForm from "../Todo/NewTodoForm";
 import { addTodo } from "../store/todoSlice";
 import MyTasks from "./MyTasks";
-import "../App.css";
 
 const MainWrapper = styled.div`
 	padding: 20px;
 	grid-area: "main";
-	background-color: #ff9966;
-
+	border-top: solid white 1px;
 	display: grid;
 	grid-template-columns: 1fr 2fr;
 	grid-template-areas: "tasks todo"
 	
-	border: solid black 2px;
 `;
 
 const TodoSection = styled.div`
 	grid-area: "todo";
 `;
 
-// const submitEnter = document.getElementById("input__todo");
-// submitEnter.addEventListener("keyup", ({ key }) => {
-// 	if (key === "Enter") {
-// 		document.getElementById("addTodoButton").click();
-// 	}
-// });
-
 const submitEnter = document.getElementById("input__todo");
 if (submitEnter) {
 	submitEnter.addEventListener("keyup", ({ key }) => {
 		if (key === "Enter") {
 			document.getElementById("addTodoButton").click();
+			console.log('submitEnter', submitEnter);
 		}
 	});
 }

@@ -25,7 +25,7 @@ const SubmitButton = styled.button`
 	width: 100px;
 	cursor: pointer;
 	&:hover {
-	background-color: #ff6633;
+	background-color: #330099;
 	color: white;
 	}
 `;
